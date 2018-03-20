@@ -12,7 +12,9 @@ var app = express();
 
 // Configure middleware
 
-
+// require routes - gets object inside of routes index.js importing blueprint so we can use it
+var routes = require("./routes")
+app.use(routes)
 //set up handlbars
 app.engine("handlebars", hbs({defaultLayout:"main"}))
 app.set("view engine", "handlebars")
